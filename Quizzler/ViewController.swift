@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     //Place your instance variables here
     let allQuestion = QuestionBank()
     var pickedAnswer: Bool = false
+    var questionNum: Int = 0
     
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
@@ -33,6 +34,8 @@ class ViewController: UIViewController {
         else if sender.tag==2{pickedAnswer=false}
         
         checkAnswer()
+        questionNum = questionNum + 1
+        nextQuestion()
     }
     
     
@@ -42,12 +45,19 @@ class ViewController: UIViewController {
     
 
     func nextQuestion() {
-        
+        if questionNum <= 12{
+            questionLabel.text = allQuestion.list[questionNum].questionText
+        }
+        else{
+            print("End of Quiz!")
+            questionNum = 0
+            questionLabel.text = allQuestion.list[questionNum].questionText
+        }
     }
     
     
     func checkAnswer() {
-        let correctAnswer = allQuestion.list[0].answer
+        let correctAnswer = allQuestion.list[questionNum].answer
         
         if correctAnswer == pickedAnswer{
             print("You got it")
