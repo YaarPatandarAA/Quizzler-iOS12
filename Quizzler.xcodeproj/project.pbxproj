@@ -15,6 +15,8 @@
 		ADEB04ED1FBDFEAA00026359 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 633646C21B8C657400FF45E2 /* Main.storyboard */; };
 		EF3B4C6B21AFCC56003A9D79 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3B4C6A21AFCC56003A9D79 /* Question.swift */; };
 		EF3B4C6D21AFD14E003A9D79 /* QuestionBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3B4C6C21AFD14E003A9D79 /* QuestionBank.swift */; };
+		EF3B4C8121AFE64A003A9D79 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3B4C7E21AFE64A003A9D79 /* ProgressHUD.m */; };
+		EF3B4C8221AFE64A003A9D79 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EF3B4C7F21AFE64A003A9D79 /* ProgressHUD.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,9 @@
 		AD6F1CCB20EBCFF600198C34 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		EF3B4C6A21AFCC56003A9D79 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		EF3B4C6C21AFD14E003A9D79 /* QuestionBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionBank.swift; sourceTree = "<group>"; };
+		EF3B4C7E21AFE64A003A9D79 /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = SOURCE_ROOT; };
+		EF3B4C7F21AFE64A003A9D79 /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = SOURCE_ROOT; };
+		EF3B4C8021AFE64A003A9D79 /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +77,9 @@
 		633646BC1B8C657400FF45E2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EF3B4C7F21AFE64A003A9D79 /* ProgressHUD.bundle */,
+				EF3B4C8021AFE64A003A9D79 /* ProgressHUD.h */,
+				EF3B4C7E21AFE64A003A9D79 /* ProgressHUD.m */,
 				633646C71B8C657400FF45E2 /* LaunchScreen.xib */,
 				633646BD1B8C657400FF45E2 /* Info.plist */,
 			);
@@ -138,7 +146,7 @@
 					633646B81B8C657400FF45E2 = {
 						CreatedOnToolsVersion = 6.4;
 						DevelopmentTeam = D6S259NNYZ;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -168,6 +176,7 @@
 				ADEB04ED1FBDFEAA00026359 /* Main.storyboard in Resources */,
 				633646C91B8C657400FF45E2 /* LaunchScreen.xib in Resources */,
 				AD6F1CCC20EBCFF600198C34 /* README.md in Resources */,
+				EF3B4C8221AFE64A003A9D79 /* ProgressHUD.bundle in Resources */,
 				633646C61B8C657400FF45E2 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -181,6 +190,7 @@
 			files = (
 				EF3B4C6B21AFCC56003A9D79 /* Question.swift in Sources */,
 				EF3B4C6D21AFD14E003A9D79 /* QuestionBank.swift in Sources */,
+				EF3B4C8121AFE64A003A9D79 /* ProgressHUD.m in Sources */,
 				633646C11B8C657400FF45E2 /* ViewController.swift in Sources */,
 				633646BF1B8C657400FF45E2 /* AppDelegate.swift in Sources */,
 			);
@@ -322,7 +332,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bsinghamarjit.Quizzler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Quizzler/Quizzler-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.0;
@@ -340,7 +350,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bsinghamarjit.Quizzler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Quizzler/Quizzler-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.0;
 			};

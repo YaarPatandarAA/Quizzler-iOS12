@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  Quizzler
 //
-//  Created by Angela Yu on 25/08/2015.
-//  Copyright (c) 2015 London App Brewery. All rights reserved.
+//  Created by Amarjit SIngh on 29/11/2018.
+//  Copyright © 2018 London App Brewery. All rights reserved.
 //
 
 import UIKit
@@ -23,11 +23,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         nextQuestion()
-        
     }
-
 
     @IBAction func answerPressed(_ sender: AnyObject) {
         if sender.tag==1 {pickedAnswer=true}
@@ -38,15 +35,12 @@ class ViewController: UIViewController {
         nextQuestion()
     }
     
-    
     func updateUI() {
         questionLabel.text = allQuestion.list[questionNum].questionText
         scoreLabel.text = "Score: \(score)"
         progressLabel.text = "\(questionNum+1) / 13"
-        
         progressBar.frame.size.width = (view.frame.size.width / 13) * CGFloat(questionNum+1)
     }
-    
 
     func nextQuestion() {
         if questionNum <= 12{
@@ -63,25 +57,19 @@ class ViewController: UIViewController {
         }
     }
     
-    
     func checkAnswer() {
         let correctAnswer = allQuestion.list[questionNum].answer
-        
         if correctAnswer == pickedAnswer{
             score+=1
         }
         else{
-            
+            ProgressHU
         }
     }
-    
     
     func startOver() {
         questionNum = 0
         score = 0
         nextQuestion()
     }
-    
-
-    
 }
