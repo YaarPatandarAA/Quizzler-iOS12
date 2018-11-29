@@ -1,5 +1,9 @@
 //
-//  Use this file to import your target's public headers that you would like to expose to Swift.
+//  Quizzler-Bridging-Header.h
+//  Quizzler
+//
+//  Created by Amarjit Singh on 11/29/18.
+//  Copyright © 2018 London App Brewery. All rights reserved.
 //
 
 #import "ProgressHUD.h"
