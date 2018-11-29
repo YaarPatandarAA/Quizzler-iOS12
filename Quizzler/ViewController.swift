@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     let allQuestion = QuestionBank()
     var pickedAnswer: Bool = false
     var questionNum: Int = 0
+    var score: Int = 0
     
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
@@ -23,8 +24,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let firstQuestion = allQuestion.list[0]
-        questionLabel.text = firstQuestion.questionText
+        nextQuestion()
         
     }
 
@@ -34,19 +34,23 @@ class ViewController: UIViewController {
         else if sender.tag==2{pickedAnswer=false}
         
         checkAnswer()
-        questionNum = questionNum + 1
+        questionNum += 1
         nextQuestion()
     }
     
     
     func updateUI() {
-      
+        questionLabel.text = allQuestion.list[questionNum].questionText
+        scoreLabel.text = "Score: \(score)"
+        progressLabel.text = "\(questionNum+1) / 13"
+        
+        progressBar.frame.size.width = (view.frame.size.width / 13) * CGFloat(questionNum+1)
     }
     
 
     func nextQuestion() {
         if questionNum <= 12{
-            questionLabel.text = allQuestion.list[questionNum].questionText
+            updateUI()
         }
         else{
             let alert = UIAlertController(title: "Awesome!", message: "You finished the quiz. Would you like to resart?", preferredStyle: .alert)
@@ -64,16 +68,17 @@ class ViewController: UIViewController {
         let correctAnswer = allQuestion.list[questionNum].answer
         
         if correctAnswer == pickedAnswer{
-            print("You got it")
+            score+=1
         }
         else{
-            print("Worng!")
+            
         }
     }
     
     
     func startOver() {
         questionNum = 0
+        score = 0
         nextQuestion()
     }
     
